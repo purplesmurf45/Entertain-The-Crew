@@ -1,3 +1,4 @@
 ## THE MARS COLONIZATION PROGRAM
 
-# NAVIGATE THE MARS ROVER
+# Entertain the crew
+# Unbeatable Tic-Tac-Toe
