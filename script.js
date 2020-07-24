@@ -100,6 +100,11 @@ function takeTurn(x, y, player) {
     }
 }
 
+/*----------------------------------------ALGORITHMS (MINIMAX)----------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/
+
 function miniMax (state, depth, player) {
     var bestMove;
     //Maximising Player
@@ -164,13 +169,14 @@ function optimizedMove(player) {
 }
 
 function clickedCell(cell) {
-	var button = document.getElementById("bnt-restart");
-	button.disabled = true;
-	var conditionToContinue = checkIfWon(board) == 0 && emptyCellsPresent(board).length > 0;
+	var button = document.getElementById("restart");
+    var conditionToContinue = checkIfWon(board) == 0 && emptyCellsPresent(board).length > 0;
+    
 /*----------------------------------For Human vs Computer -----------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------*/
+
     if (players == 1) {
         if (conditionToContinue == true) {
             var x = cell.id.split("")[0];
@@ -193,7 +199,7 @@ function clickedCell(cell) {
             }
 
             msg = document.getElementById("message");
-            msg.innerHTML = "You lose!";
+            msg.innerHTML = "Computer Wins!";
         }
         if (emptyCellsPresent(board).length == 0 && checkIfWon(board) == 0) {
             var msg = document.getElementById("message");
@@ -204,10 +210,12 @@ function clickedCell(cell) {
             button.disabled = false;
         }
     }
+
 /*----------------------------------For Human vs Human -----------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------*/
+
     else if (players == 2) {
         if (conditionToContinue == true) {
             var x = cell.id.split("")[0];
@@ -262,6 +270,12 @@ function clickedCell(cell) {
     }
 }
 
+/*----------------------------------------------Buttons-----------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------*/
+
+
 function humanVsHuman(button) {
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
@@ -271,10 +285,10 @@ function humanVsHuman(button) {
         }
     }
     button.disabled = true;
-    button.value = "Playing..."
+    // button.value = "Playing..."
     var b1 = document.getElementById("HvC");
     b1.disabled = false;
-    b1.value = "Human v/s Computer";
+    b1.value = "v/s Computer";
     msg = document.getElementById("message");
     msg.innerHTML = "";
     players = 2;
@@ -291,32 +305,49 @@ function humanVsComputer(button) {
         }
     }
     button.disabled = true;
-    button.value = "Playing..."
+    // button.value = "Playing..."
     var b1 = document.getElementById("HvH");
     b1.disabled = false;
-    b1.value = "Human v/s Human";
+    b1.value = "v/s Human";
     msg = document.getElementById("message");
     msg.innerHTML = "";
     players = 1;
     turns = 0;
+    var b2 = document.getElementById("SA");
+    b2.disabled = false;
 }
 
 function startComputerBnt(button) {
     if (players == 1) {
+        restartBnt(button);
         optimizedMove(Player1);
         button.disabled = true;
+        var b1 = document.getElementById("HP");
+        b1.disabled = false;
     }
+    button.disabled = true;
+}
+
+function startHumanBnt(button) {
+    if (players == 1) {
+        // optimizedMove(Player1);
+        restartBnt(button);
+        button.disabled = true;
+        var b1 = document.getElementById("SA");
+        b1.disabled = false;
+    }
+    button.disabled = true;
 }
 
 function restartBnt(button) {
     var htmlBoard;
     var msg;
-    // button.disabled = false;
+    button.active = true;
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             board[i][j] = 0;
             htmlBoard = document.getElementById(String(i) + String(j));
-            // htmlBoard.style.color = "#444";
+            htmlBoard.style.color = "#444";
             htmlBoard.innerHTML = "";
         }
     }
@@ -340,21 +371,3 @@ function undoButton() {
         msg.innerHTML = "";
     }
 }
-
-
-// if (board[0][0] == 1 && board[0][1] == 1 && board[0][2] == 1)
-            //     lines = [[0, 0], [0, 1], [0, 2]];
-            // else if (board[1][0] == 1 && board[1][1] == 1 && board[1][2] == 1)
-            //     lines = [[1, 0], [1, 1], [1, 2]];
-            // else if (board[2][0] == 1 && board[2][1] == 1 && board[2][2] == 1)
-            //     lines = [[2, 0], [2, 1], [2, 2]];
-            // else if (board[0][0] == 1 && board[1][0] == 1 && board[2][0] == 1)
-            //     lines = [[0, 0], [1, 0], [2, 0]];
-            // else if (board[0][1] == 1 && board[1][1] == 1 && board[2][1] == 1)
-            //     lines = [[0, 1], [1, 1], [2, 1]];
-            // else if (board[0][2] == 1 && board[1][2] == 1 && board[2][2] == 1)
-            //     lines = [[0, 2], [1, 2], [2, 2]];
-            // else if (board[0][0] == 1 && board[1][1] == 1 && board[2][2] == 1)
-            //     lines = [[0, 0], [1, 1], [2, 2]];
-            // else if (board[2][0] == 1 && board[1][1] == 1 && board[0][2] == 1)
-            //     lines = [[2, 0], [1, 1], [0, 2]];
