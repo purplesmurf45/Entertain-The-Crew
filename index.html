@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="UTF-8">
+       <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+       <link rel="stylesheet" href="style.css">
+       <title>Tic Tac Toe</title>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Tic Tac Toe</h1><br>
+        <p id="message"></p>
+        <div class="sidebar" style="width: 25%">
+            <input type="button" value="Human v/s Human" id="HvH" onclick="humanVsHuman(this)">
+            <input type="button" value="Human v/s Computer" id="HvC" onclick="humanVsComputer(this)">
+            <input type="button" value="Undo" id="undo" onclick="undoButton(this)"/>
+            <input type="button" value="Start AI" id="SA" onclick="startComputerBnt(this)"/>
+        </div>
+        <table>
+            <tr>
+                <td class="cell" id="00" onclick="clickedCell(this)"></td>
+                <td class="cell" id="01" onclick="clickedCell(this)"></td>
+                <td class="cell" id="02" onclick="clickedCell(this)"></td>
+            </tr>
+            <tr>
+                <td class="cell" id="10" onclick="clickedCell(this)"></td>
+                <td class="cell" id="11" onclick="clickedCell(this)"></td>
+                <td class="cell" id="12" onclick="clickedCell(this)"></td>
+            </tr>
+            <tr>
+                <td class="cell" id="20" onclick="clickedCell(this)"></td>
+                <td class="cell" id="21" onclick="clickedCell(this)"></td>
+                <td class="cell" id="22" onclick="clickedCell(this)"></td>
+            </tr>
+        </table>
+            <!-- <div class="cell" id="c0"></div>
+            <div class="cell" id="c1"></div>
+            <div class="cell" id="c2"></div>
+            <div class="cell" id="c3"></div>
+            <div class="cell" id="c4"></div>
+            <div class="cell" id="c5"></div>
+            <div class="cell" id="c6"></div>
+            <div class="cell" id="c7"></div>
+            <div class="cell" id="c8"></div> -->
+        <!-- <div class="endgame">
+            <div class="text"></div>
+        </div>
+        <div class="newgame">
+            <button onclick="startGame()">New Game</button>
+        </div> -->
+        <input type="button" value="Restart" id="bnt-restart" onclick="restartBnt(this)"/>
+        <script src="script.js"></script>
+        </div>
+    </body>
+</html>
