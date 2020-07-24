@@ -1,3 +1,4 @@
 ## THE MARS COLONIZATION PROGRAM
 
-# Unbeatable Tic-Tac-Toe
+# Unbeatable Tic-Tac-Toe Using Minimax Algorithm
+
