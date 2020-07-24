@@ -8,11 +8,12 @@
 }
 
 h1 {
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
     font-size: 50px;
     position: absolute;
-    /* left: 50%; */
-    top: 10px;
+    left: 55%;
+    top: 0%;
 }
 
 td {
@@ -29,9 +30,9 @@ td {
 table {
     border-collapse: collapse;
     position: absolute;
-    left: 50%;
+    left: 65%;
     margin-left: -155px;
-    top: 200px;
+    top: 170px;
 }
 
 
@@ -77,23 +78,6 @@ table tr td:last-child {
     background-color: rgba(152, 198, 224, 0.726);
 }
 
-#bnt-restart {
-	display: block;
-	padding: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 200px;
-	background: #00AEEA;
-	font-size: 1.5em;
-	color: #FFF;
-	border: none;
-	border-radius: 6px;
-    cursor: pointer;
-    position: absolute;
-    top: 550px;
-    left: 45%;
-}
-
 .sidebar {
     height: 100%;
     width: 160px;
@@ -103,34 +87,210 @@ table tr td:last-child {
     left: 0;
     overflow: hidden;
     padding-top: 20px;
-    background-color: black;
+    background-color: #34495e;
 }
 
-#bnt-restart:hover {
-	background: #1DC5FF;
+#message {
+    position: absolute;
+    top: 80%;
+    left: 830px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #444;
+    font-size: 40px;
 }
 
-#bnt-restart:active {
+#opponent {
+    position: relative;
+    left: 65px;
+    top: 30px;
+    color: white;
+    font-size: 25px;
+}
+
+#HvH {
+	display: block;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	background: #27ae60;
+	font-size: 22px;
+	color: #FFF;
+	border: none;
+	border-radius: 6px;
+    cursor: pointer;
+    position: absolute;
+    top: 120px;
+    left: 240px;
+}
+
+#HvH:hover {
+	background: #0ed862;
+}
+
+#HvH:active {
 	background: #0787B3;
 }
 
-#bnt-restart:disabled {
+#HvH:disabled {
 	color: #444;
 	background: #CECECE;
 }
 
-.endgame {
-    display: none;
-    width: 200px;
-    top: 120px;
-    background-color: rgba(205,133,63, 0.8);
+#HvC {
+	display: block;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	background: #27ae60;
+	font-size: 22px;
+	color: #FFF;
+	border: none;
+	border-radius: 6px;
+    cursor: pointer;
     position: absolute;
-    left: 50%;
-    margin-left: -100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    border-radius: 5px;
+    top: 120px;
+    left: 70px;
+}
+
+#HvC:hover {
+	background: #0ed862;
+}
+
+#HvC:active {
+	background: #0787B3;
+}
+
+#HvC:disabled {
+	color: #444;
+	background: #CECECE;
+}
+
+#startingplayer {
+    position: absolute;
+    top: 180px;
+    left: 65px;
     color: white;
-    font-size: 2em;
+    font-size: 25px;
+}
+
+#linkto {
+    position: absolute;
+    left: 180px;
+    top: 530px;
+    color: rgb(170, 37, 37);
+    font-size: 15px;
+}
+
+#HP {
+	display: block;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	background: #27ae60;
+	font-size: 22px;
+	color: #FFF;
+	border: none;
+	border-radius: 6px;
+    cursor: pointer;
+    position: absolute;
+    top: 250px;
+    left: 70px;
+}
+
+#HP:hover {
+	background: #0ed862;
+}
+
+#HP:active {
+	background: #0787B3;
+}
+
+#HP:disabled {
+	color: #444;
+	background: #CECECE;
+}
+
+#SA {
+	display: block;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	background: #27ae60;
+	font-size: 22px;
+	color: #FFF;
+	border: none;
+	border-radius: 6px;
+    cursor: pointer;
+    position: absolute;
+    top: 250px;
+    left: 240px;
+}
+
+#SA:hover {
+	background: #0ed862;
+}
+
+#SA:active {
+	background: #0787B3;
+}
+
+#SA:disabled {
+	color: #444;
+	background: #CECECE;
+}
+
+#undo {
+	display: block;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	background: #7f8fa6;
+	font-size: 22px;
+	color: #FFF;
+	border: none;
+	border-radius: 6px;
+    cursor: pointer;
+    position: absolute;
+    top: 470px;
+    left: 240px;
+}
+
+#undo:hover {
+	background: rgb(76, 89, 94);
+}
+
+#restart {
+	display: block;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	background: #00AEEA;
+	font-size: 1.5em;
+	color: #FFF;
+	border: none;
+	border-radius: 6px;
+    cursor: pointer;
+    position: absolute;
+    top: 470px;
+    left: 70px;
+}
+
+
+#restart:hover {
+	background: #1DC5FF;
+}
+
+#restart:active {
+	background: #0787B3;
+}
+
+#restart:disabled {
+	color: #444;
+	background: #CECECE;
 }
