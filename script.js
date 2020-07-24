@@ -277,6 +277,9 @@ function clickedCell(cell) {
 
 
 function humanVsHuman(button) {
+    document.getElementById("startingplayer").style.visibility = "hidden";
+    document.getElementById("HP").style.visibility = "hidden";
+    document.getElementById("SA").style.visibility = "hidden";
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             board[i][j] = 0;
@@ -296,6 +299,9 @@ function humanVsHuman(button) {
 }
 
 function humanVsComputer(button) {
+    document.getElementById("startingplayer").style.visibility = "visible";
+    document.getElementById("HP").style.visibility = "visible";
+    document.getElementById("SA").style.visibility = "visible";
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             board[i][j] = 0;
@@ -320,6 +326,9 @@ function humanVsComputer(button) {
 function startComputerBnt(button) {
     if (players == 1) {
         restartBnt(button);
+        document.getElementById("startingplayer").style.visibility = "visible";
+        document.getElementById("HP").style.visibility = "visible";
+        document.getElementById("SA").style.visibility = "visible";
         optimizedMove(Player1);
         button.disabled = true;
         var b1 = document.getElementById("HP");
@@ -332,6 +341,9 @@ function startHumanBnt(button) {
     if (players == 1) {
         // optimizedMove(Player1);
         restartBnt(button);
+        document.getElementById("startingplayer").style.visibility = "visible";
+        document.getElementById("HP").style.visibility = "visible";
+        document.getElementById("SA").style.visibility = "visible";
         button.disabled = true;
         var b1 = document.getElementById("SA");
         b1.disabled = false;
@@ -351,6 +363,11 @@ function restartBnt(button) {
             htmlBoard.innerHTML = "";
         }
     }
+    document.getElementById("startingplayer").style.visibility = "hidden";
+    document.getElementById("HP").style.visibility = "hidden";
+    document.getElementById("SA").style.visibility = "hidden";
+    document.getElementById("HvC").disabled = false;
+    document.getElementById("HvH").disabled = false;
     moves.splice(0, moves.length);
     turns = 0;
     winBoard_index = -1;
